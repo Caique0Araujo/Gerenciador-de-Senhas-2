@@ -27,13 +27,11 @@ namespace Gerenciador_de_Senhas_2
             preencherCampos();
         }
 
-        // Três propriedades para preencher os campos no LoginFom caso haja o registro
         public String usuario { get; set; }
         public String senha { get; set; }
         public bool registrou { get; set; }
         private int usuarioID { get; set; }
 
-        // Verifica se o usuário já existe
         private bool verificarUsuario()
         {
             Conexao con = new Conexao();
@@ -69,11 +67,9 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.desconectar();
             }
-            con.desconectar();
             return false;
         }
 
-        // Verifica os campos TextField
 
         private bool verificarCampos()
         {
@@ -124,7 +120,6 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.desconectar();
             }
-            con.desconectar();
         }
 
 
@@ -161,7 +156,6 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.desconectar();
                 }
-                c.desconectar();
                 registrou = false;
 
 
@@ -194,7 +188,6 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.desconectar();
                 }
-                c.desconectar();
                 registrou = true;
 
             }

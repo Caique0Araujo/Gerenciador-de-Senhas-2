@@ -87,7 +87,6 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.desconectar();
                 }
-                c.desconectar();
 
                 this.Hide();
 
@@ -117,7 +116,6 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.desconectar();
                 }
-                c.desconectar();
                 this.Hide();
             }
         }

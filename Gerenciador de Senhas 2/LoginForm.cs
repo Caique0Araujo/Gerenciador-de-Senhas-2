@@ -65,7 +65,7 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.desconectar();
             }
-            con.desconectar();
+
 
             return false;
         }
@@ -95,7 +95,6 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.desconectar();
             }
-            con.desconectar();
 
             return 0;
 
@@ -120,6 +119,7 @@ namespace Gerenciador_de_Senhas_2
                 }
                 else
                 {
+                    con.desconectar();
                     return true;
                 }
 
@@ -132,7 +132,6 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.desconectar();
             }
-            con.desconectar();
 
             return false;
         }
@@ -170,8 +169,7 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.desconectar();
             }
-            con.desconectar();
-
+            
         }
 
         private void loginBttn_Click(object sender, EventArgs e)
@@ -226,7 +224,6 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.desconectar();
                 }
-                c.desconectar();
 
             }
             else
@@ -250,7 +247,7 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.desconectar();
                 }
-                c.desconectar();
+
             }
             
         }

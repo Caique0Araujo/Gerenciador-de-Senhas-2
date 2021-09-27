@@ -19,13 +19,16 @@ namespace Gerenciador_de_Senhas_2
 
         public string usuario { get; set; }
 
-        private int usuarioID;
+        public int idUsuario {  get; set; }
+
+        private DataTable dataTable;
+
         public HomeForm(string usuario, int num)
         {
             InitializeComponent();
             this.usuario = usuario;
+            this.idUsuario = num;
             conectarTabela();
-            this.usuarioID = num;
 
         }
 
@@ -36,17 +39,18 @@ namespace Gerenciador_de_Senhas_2
             {
                 c.conectar();
 
-                string sql = "SELECT senhaNome, senhaSenha, senhaLink FROM Senhas " +
+                string sql = "SELECT senhaID, senhaNome, senhaSenha, senhaLink FROM Senhas " +
                     "Where Senhas.senhaUsuario = (" +
                     "select Contas.usuarioID from Contas where Contas.usuarioLogin = '" + this.usuario + "'" +
-                    ");";
+                    ")";
                 SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, c.con);
-                DataTable dataTable = new DataTable();
+                dataTable = new DataTable();
                 dados.Fill(dataTable);
 
-                dataTable.Columns[0].ColumnName = "Nome da Senha";
-                dataTable.Columns[1].ColumnName = "Senha";
-                dataTable.Columns[2].ColumnName = "Link da Senha";
+                dataTable.Columns[0].ColumnName = "ID da Senha";
+                dataTable.Columns[1].ColumnName = "Nome da Senha";
+                dataTable.Columns[2].ColumnName = "Senha";
+                dataTable.Columns[3].ColumnName = "Link da Senha";
 
                 dataGridView.DataSource = dataTable;
 
@@ -60,7 +64,7 @@ namespace Gerenciador_de_Senhas_2
                 c.desconectar();
             }
 
-            c.desconectar();
+
 
             if (dataGridView.Rows.Count < 1)
             {
@@ -73,6 +77,7 @@ namespace Gerenciador_de_Senhas_2
                 editarButton.Enabled = true;
                 excluirButton.Enabled = true;
             }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -85,7 +90,7 @@ namespace Gerenciador_de_Senhas_2
                 try
                 {
                     c.conectar();
-                    string sql = "delete from Senhas where senhaID = " + id+";";
+                    string sql = "delete from Senhas where senhaID = " + id;
 
                     SQLiteCommand command = new SQLiteCommand(sql, c.con);
                     command.ExecuteNonQuery();
@@ -99,14 +104,13 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.desconectar();
                 }
-                c.desconectar();
             }
             conectarTabela();
         }
 
         private void novoButton_Click(object sender, EventArgs e)
         {
-            int idUser = this.usuarioID;
+            int idUser = idUsuario;
             //Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[3].Value);
             NovaSenhaForm f = new NovaSenhaForm(idUser);
             f.ShowDialog();
@@ -114,13 +118,14 @@ namespace Gerenciador_de_Senhas_2
             conectarTabela();
         }
 
+
         private void editarButton_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[0].Value);
             string nome = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[1].Value);
-            string link = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
-            int idUser = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[3].Value);
-            string senha = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[4].Value);
+            string senha = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
+            string link = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[3].Value);
+            int idUser = idUsuario;
 
             int escolha = 1;
             NovaSenhaForm f = new NovaSenhaForm(id, idUser, nome, link, senha);
@@ -140,7 +145,7 @@ namespace Gerenciador_de_Senhas_2
 
         private void editarContaButton_Click(object sender, EventArgs e)
         {
-            CadastroForm f = new CadastroForm(usuarioID);
+            CadastroForm f = new CadastroForm(idUsuario);
             f.Text = "Editar contas";
             f.ShowDialog();
             f.Close();
@@ -183,6 +188,11 @@ namespace Gerenciador_de_Senhas_2
             {
                 MessageBox.Show("Backup não encontrado !", "Restauração", MessageBoxButtons.OK);
             }
+        }
+
+        private void post1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

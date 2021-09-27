@@ -91,12 +91,6 @@
     <Compile Include="NovaSenhaForm.Designer.cs">
       <DependentUpon>NovaSenhaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Posts.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Posts.Designer.cs">
-      <DependentUpon>Posts.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadastroForm.resx">

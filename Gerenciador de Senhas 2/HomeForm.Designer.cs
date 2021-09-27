@@ -183,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.ClientSize = new System.Drawing.Size(519, 327);
+            this.ClientSize = new System.Drawing.Size(519, 325);
             this.Controls.Add(this.restoreButton);
             this.Controls.Add(this.editarContaButton);
             this.Controls.Add(this.button1);
