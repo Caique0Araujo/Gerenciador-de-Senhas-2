@@ -72,7 +72,7 @@ namespace Gerenciador_de_Senhas_2
                         "INSERT INTO Senhas " +
                         "(senhaNome, senhaSenha, senhaUsuario, senhaLink) " +
                         "VALUES " +
-                        "('" + nomeTextBox.Text + "','" + senhaTextBox.Text + "'," + this.idUser + ",'" + linkTextBox.Text + "')";
+                        "('" + nomeTextBox.Text + "','" + senhaTextBox.Text + "'," + this.idUser + ",'" + linkTextBox.Text + "');";
 
                     SQLiteCommand command = new SQLiteCommand(sql, c.con);
                     command.ExecuteNonQuery();

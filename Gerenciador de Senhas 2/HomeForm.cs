@@ -36,10 +36,10 @@ namespace Gerenciador_de_Senhas_2
             {
                 c.conectar();
 
-                string sql = "SELECT senhaNome, senhaSenha, senhaUsuario FROM Senhas " +
+                string sql = "SELECT senhaNome, senhaSenha, senhaLink FROM Senhas " +
                     "Where Senhas.senhaUsuario = (" +
                     "select Contas.usuarioID from Contas where Contas.usuarioLogin = '" + this.usuario + "'" +
-                    ")";
+                    ");";
                 SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, c.con);
                 DataTable dataTable = new DataTable();
                 dados.Fill(dataTable);
@@ -85,7 +85,7 @@ namespace Gerenciador_de_Senhas_2
                 try
                 {
                     c.conectar();
-                    string sql = "delete from Senhas where senhaID = " + id;
+                    string sql = "delete from Senhas where senhaID = " + id+";";
 
                     SQLiteCommand command = new SQLiteCommand(sql, c.con);
                     command.ExecuteNonQuery();
@@ -171,6 +171,8 @@ namespace Gerenciador_de_Senhas_2
             {
                 if (File.Exists("./DBSenhas.db"))
                 {
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
                     File.Delete("./DBSenhas.db");
                 }
                 ZipFile.ExtractToDirectory("./Backup.zip", "./");

@@ -41,7 +41,7 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.conectar();
 
-                string sql = "Select usuarioLogin from Contas where usuarioLogin = '" + usuariotextBox.Text + "'";
+                string sql = "Select usuarioLogin from Contas where usuarioLogin = '" + usuariotextBox.Text + "';";
                 SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, con.con);
                 DataTable usuario = new DataTable();
                 dados.Fill(usuario);
@@ -104,7 +104,7 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.conectar();
 
-                string sql = "Select * from Contas where usuarioID = "+this.usuarioID;
+                string sql = "Select * from Contas where usuarioID = "+this.usuarioID+";";
                 SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, con.con);
                 DataTable senha = new DataTable();
                 dados.Fill(senha);
@@ -143,7 +143,7 @@ namespace Gerenciador_de_Senhas_2
                         "usuarioNome = '" + nometextBox.Text + "' , " +
                         "usuarioLogin = '" + usuariotextBox.Text + "' , " +
                         "usuarioSenha = '" + senhatextBox.Text + "' " +
-                        "Where usuarioID = " + this.usuarioID;
+                        "Where usuarioID = " + this.usuarioID+";";
 
                     SQLiteCommand command = new SQLiteCommand(sql, c.con);
                     command.ExecuteNonQuery();
@@ -176,7 +176,7 @@ namespace Gerenciador_de_Senhas_2
                         "INSERT INTO Contas " +
                         "(usuarioNome, usuarioLogin, usuarioSenha) " +
                         "VALUES " +
-                        "('" + nometextBox.Text + "','" + usuariotextBox.Text + "','" + senhatextBox.Text + "')";
+                        "('" + nometextBox.Text + "','" + usuariotextBox.Text + "','" + senhatextBox.Text + "');";
                 
                     SQLiteCommand command = new SQLiteCommand(sql, c.con);
                     command.ExecuteNonQuery();

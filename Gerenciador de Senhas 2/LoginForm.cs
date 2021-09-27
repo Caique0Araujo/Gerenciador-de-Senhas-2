@@ -77,7 +77,7 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.conectar();
 
-                string sql = "Select usuarioID from Contas where usuarioLogin = '" + usuarioTextBox.Text + "'";
+                string sql = "Select usuarioID from Contas where usuarioLogin = '" + usuarioTextBox.Text + "';";
                 SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, con.con);
                 DataTable Ids = new DataTable();
                 dados.Fill(Ids);
@@ -108,7 +108,7 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.conectar();
 
-                string sql = "Select usuarioSenha from Contas where usuarioSenha = '" + senhaTextBox.Text + "' AND usuarioLogin = '" + usuarioTextBox.Text + "'";
+                string sql = "Select usuarioSenha from Contas where usuarioSenha = '" + senhaTextBox.Text + "' AND usuarioLogin = '" + usuarioTextBox.Text + "';";
                 SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, con.con);
                 DataTable senha = new DataTable();
                 dados.Fill(senha);
@@ -145,7 +145,7 @@ namespace Gerenciador_de_Senhas_2
             {
                 con.conectar();
 
-                string sql = "Select * from Contas where usuarioConectado = 1";
+                string sql = "Select * from Contas where usuarioConectado = 1;";
                 SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, con.con);
                 DataTable senha = new DataTable();
                 dados.Fill(senha);
@@ -212,7 +212,7 @@ namespace Gerenciador_de_Senhas_2
                     c.conectar();
                     string sql =
                         "UPDATE Contas SET usuarioConectado = null where usuarioConectado = 1;" +
-                        "UPDATE Contas SET usuarioConectado = 1 where usuarioLogin = '" + usuarioTextBox.Text + "'";
+                        "UPDATE Contas SET usuarioConectado = 1 where usuarioLogin = '" + usuarioTextBox.Text + "';";
                     SQLiteCommand command = new SQLiteCommand(sql, c.con);
                     command.ExecuteNonQuery();
 
@@ -235,7 +235,7 @@ namespace Gerenciador_de_Senhas_2
                 {
                     c.conectar();
                     string sql =
-                        "UPDATE Contas SET usuarioConectado = null where usuarioConectado = 1";
+                        "UPDATE Contas SET usuarioConectado = null where usuarioConectado = 1;";
                     SQLiteCommand command = new SQLiteCommand(sql, c.con);
                     command.ExecuteNonQuery();
 

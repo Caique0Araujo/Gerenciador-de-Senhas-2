@@ -18,7 +18,7 @@ namespace Gerenciador_de_Senhas_2
         public void desconectar()
         {
             con.Close();
-            
+
         }
 
     }
