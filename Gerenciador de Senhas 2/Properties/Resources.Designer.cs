@@ -163,6 +163,16 @@ namespace Gerenciador_de_Senhas_2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_remove_circle_black_36dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_remove_circle_black_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_add_circle_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("outline_add_circle_black_36dp", resourceCulture);

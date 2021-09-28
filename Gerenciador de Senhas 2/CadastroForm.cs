@@ -17,6 +17,9 @@ namespace Gerenciador_de_Senhas_2
         {
             InitializeComponent();
             this.registrou = false;
+            this.removeButton.Enabled = false;
+            this.removeButton.Visible = false;
+            this.excluiu = false;
 
         }
         public CadastroForm(int ID)
@@ -25,12 +28,17 @@ namespace Gerenciador_de_Senhas_2
             this.registrou = true;
             usuarioID = ID;
             preencherCampos();
+            this.removeButton.Enabled = true;
+            this.removeButton.Visible = true;
+            this.excluiu = false;
         }
 
         public String usuario { get; set; }
         public String senha { get; set; }
         public bool registrou { get; set; }
         private int usuarioID { get; set; }
+
+        public bool excluiu { get; set;  }
 
         private bool verificarUsuario()
         {
@@ -191,6 +199,48 @@ namespace Gerenciador_de_Senhas_2
                 registrou = true;
 
             }
+
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            Conexao c = new Conexao();
+
+            try
+            {
+                
+                if(MessageBox.Show("Deseja excluir a conta atual ?", "Excluir conta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+
+                    {
+                        c.conectar();
+                        string sql = "delete from Contas where usuarioID = " + usuarioID +"; "+
+                                     "delete from Senhas where senhaUsuario = " + usuarioID + "; ";
+                        SQLiteCommand command = new SQLiteCommand(sql, c.con);
+                        command.ExecuteNonQuery();
+                        usuariotextBox.Text = "";
+                        senhatextBox.Text = "";
+                        nometextBox.Text = "";
+                        this.excluiu = true;
+                        this.Dispose();
+                        this.Hide();
+                        this.Close();
+                    }
+                
+            }
+            catch (Exception E)
+            {
+
+                MessageBox.Show(E.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                c.desconectar();
+            }
+        }
+
+        private void CadastroForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

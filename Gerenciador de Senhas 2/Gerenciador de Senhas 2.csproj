@@ -195,6 +195,7 @@
   <ItemGroup>
     <Content Include="icone.ico" />
     <Content Include="IconeAplicativo.ico" />
+    <None Include="Resources\baseline_remove_circle_black_36dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

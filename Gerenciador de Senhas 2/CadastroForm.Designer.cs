@@ -38,6 +38,7 @@
             this.nometextBox = new System.Windows.Forms.TextBox();
             this.cadastroBttn = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.removeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -108,7 +109,7 @@
             this.cadastroBttn.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroBttn.ForeColor = System.Drawing.Color.Transparent;
             this.cadastroBttn.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.baseline_check_circle_black_36dp;
-            this.cadastroBttn.Location = new System.Drawing.Point(102, 146);
+            this.cadastroBttn.Location = new System.Drawing.Point(99, 145);
             this.cadastroBttn.Name = "cadastroBttn";
             this.cadastroBttn.Size = new System.Drawing.Size(36, 36);
             this.cadastroBttn.TabIndex = 4;
@@ -116,12 +117,29 @@
             this.cadastroBttn.UseVisualStyleBackColor = false;
             this.cadastroBttn.Click += new System.EventHandler(this.cadastroBttn_Click);
             // 
+            // removeButton
+            // 
+            this.removeButton.BackColor = System.Drawing.Color.Transparent;
+            this.removeButton.FlatAppearance.BorderSize = 0;
+            this.removeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeButton.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeButton.ForeColor = System.Drawing.Color.Transparent;
+            this.removeButton.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.baseline_remove_circle_black_36dp;
+            this.removeButton.Location = new System.Drawing.Point(141, 145);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(36, 36);
+            this.removeButton.TabIndex = 14;
+            this.toolTip.SetToolTip(this.removeButton, "Excluir conta");
+            this.removeButton.UseVisualStyleBackColor = false;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
             // CadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.ClientSize = new System.Drawing.Size(233, 194);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.cadastroBttn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.nometextBox);
@@ -136,6 +154,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.CadastroForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,5 +170,6 @@
         private System.Windows.Forms.TextBox nometextBox;
         private System.Windows.Forms.Button cadastroBttn;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button removeButton;
     }
 }

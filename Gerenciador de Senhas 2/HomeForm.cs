@@ -149,6 +149,14 @@ namespace Gerenciador_de_Senhas_2
             f.Text = "Editar contas";
             f.ShowDialog();
             f.Close();
+            if (f.excluiu)
+            {
+                LoginForm l = new LoginForm();
+                this.Hide();
+                l.ShowDialog();
+                this.Close();
+
+            }
         }
 
         private void exportarButton_Click(object sender, EventArgs e)
