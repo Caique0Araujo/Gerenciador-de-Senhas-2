@@ -1,31 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Runtime.InteropServices;
 
 namespace Gerenciador_de_Senhas_2
 {
     public partial class NovaSenhaForm : Form
     {
 
+        private const int CS_DropShadow = 0x00020000;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DropShadow;
+                return cp;
+            }
+        }
         private int indesOfRow {  get; set; }
 
         private int escolha {  get; set; }
         
-        private int idUser { get; set; }    
+        private int idUser { get; set; }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
 
         public NovaSenhaForm(int indexOfRow, int idUser, string nome, string link, string senha)
         {
             InitializeComponent();
             this.indesOfRow = indexOfRow;
             this.idUser = idUser;
-            label4.Text = "Editar";
+            label4.Text = "Editar Senha";
+            label5.Text = "Editar";
 
             this.escolha = 2;
 
@@ -38,7 +52,8 @@ namespace Gerenciador_de_Senhas_2
         public NovaSenhaForm(int idUser)
         {
             InitializeComponent();
-            label4.Text = "Novo";
+            label4.Text = "Nova Senha";
+            label5.Text = "Nova";
             this.escolha = 1;
             this.idUser = idUser;
 
@@ -119,5 +134,25 @@ namespace Gerenciador_de_Senhas_2
                 this.Hide();
             }
         }
+
+        private void panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

@@ -121,9 +121,6 @@
   <data name="round_assignment_ind_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\round_assignment_ind_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="round_assignment_ind_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\round_assignment_ind_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="arrows-square-plus_98342 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrows-square-plus_98342 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,11 +130,14 @@
   <data name="arrows-square-up_97799 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrows-square-up_97799 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrows-square-plus_98342" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrows-square-plus_98342.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="outline_logout_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outline_logout_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="outline_add_circle_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\outline_add_circle_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Alpha tauri Silverstone fullbody on the track2880x1800" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Alpha tauri Silverstone fullbody on the track2880x1800.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="outline_minimize_black_24dp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outline_minimize_black_24dp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1491254405-plusaddmoredetail_82972" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1491254405-plusaddmoredetail_82972.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,20 +145,32 @@
   <data name="arrows-square-remove_98150 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrows-square-remove_98150 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="outline_minimize_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outline_minimize_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="baseline_check_circle_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\baseline_check_circle_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="round_login_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\round_login_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="outline_restore_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outline_restore_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrows-square-plus_983421" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrows-square-plus_983421.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrows-square-down_97898 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrows-square-down_97898 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="round_login_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\round_login_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="outline_add_circle_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outline_add_circle_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="round_assignment_ind_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\round_assignment_ind_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="outline_edit_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\outline_edit_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrows-square-plus_98342" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrows-square-plus_98342.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="outline_close_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\outline_close_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,19 +181,19 @@
   <data name="outline_border_color_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\outline_border_color_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="outline_restore_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\outline_restore_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="baseline_remove_circle_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\baseline_remove_circle_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="outline_add_circle_black_36dp1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\outline_add_circle_black_36dp1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Alpha tauri Silverstone fullbody on the track2880x1800" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Alpha tauri Silverstone fullbody on the track2880x1800.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="outline_close_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\outline_close_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="outline_logout_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\outline_logout_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrows-square-down_97898 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrows-square-down_97898 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="baseline_remove_circle_black_36dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\baseline_remove_circle_black_36dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="twotone_pin_black_24dp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\twotone_pin_black_24dp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

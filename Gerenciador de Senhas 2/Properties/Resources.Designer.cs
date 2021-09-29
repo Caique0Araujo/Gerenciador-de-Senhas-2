@@ -213,6 +213,16 @@ namespace Gerenciador_de_Senhas_2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_close_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_close_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_close_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("outline_close_black_36dp", resourceCulture);
@@ -236,6 +246,26 @@ namespace Gerenciador_de_Senhas_2.Properties {
         internal static System.Drawing.Bitmap outline_logout_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("outline_logout_black_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_minimize_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_minimize_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_minimize_black_24dp1 {
+            get {
+                object obj = ResourceManager.GetObject("outline_minimize_black_24dp1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +306,16 @@ namespace Gerenciador_de_Senhas_2.Properties {
         internal static System.Drawing.Bitmap round_login_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("round_login_black_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap twotone_pin_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("twotone_pin_black_24dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

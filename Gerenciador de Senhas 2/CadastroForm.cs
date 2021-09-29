@@ -1,18 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Runtime.InteropServices;
 
 namespace Gerenciador_de_Senhas_2
 {
     public partial class CadastroForm : Form
     {
+
+        private const int CS_DropShadow = 0x00020000;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DropShadow;
+                return cp;
+            }
+        }
         public CadastroForm()
         {
             InitializeComponent();
@@ -20,6 +27,7 @@ namespace Gerenciador_de_Senhas_2
             this.removeButton.Enabled = false;
             this.removeButton.Visible = false;
             this.excluiu = false;
+            label3.Text = "Cadastro";
 
         }
         public CadastroForm(int ID)
@@ -31,7 +39,16 @@ namespace Gerenciador_de_Senhas_2
             this.removeButton.Enabled = true;
             this.removeButton.Visible = true;
             this.excluiu = false;
+            label3.Text = "Editar conta";
         }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HTCAPTION = 0x2;
+        [DllImport("User32.dll")]
+        public static extern bool ReleaseCapture();
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
 
         public String usuario { get; set; }
         public String senha { get; set; }
@@ -242,6 +259,25 @@ namespace Gerenciador_de_Senhas_2
         private void CadastroForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void minimizeButton_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+            }
         }
     }
 }
