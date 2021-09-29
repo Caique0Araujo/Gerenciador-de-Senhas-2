@@ -5,7 +5,7 @@ using System.Data.SQLite;
 using System.IO;
 using System.IO.Compression;
 using System.Runtime.InteropServices;
-
+using System.Windows.Documents;
 
 namespace Gerenciador_de_Senhas_2
 {
@@ -24,9 +24,11 @@ namespace Gerenciador_de_Senhas_2
             }
         }
 
+        private SenhaCard[] senhaCard;
+
         public string usuario { get; set; }
 
-        public int idUsuario {  get; set; }
+        public int idUsuario { get; set; }
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
@@ -43,110 +45,122 @@ namespace Gerenciador_de_Senhas_2
             InitializeComponent();
             this.usuario = usuario;
             this.idUsuario = num;
-            conectarTabela();
+            populateItems(this.dataTable);
+
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
 
         }
 
         private void conectarTabela()
         {
-            Conexao c = new Conexao();
-            try
-            {
-                c.conectar();
-
-                string sql = "SELECT senhaID, senhaNome, senhaSenha, senhaLink FROM Senhas " +
-                    "Where Senhas.senhaUsuario = (" +
-                    "select Contas.usuarioID from Contas where Contas.usuarioLogin = '" + this.usuario + "'" +
-                    ")";
-                SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, c.con);
-                dataTable = new DataTable();
-                dados.Fill(dataTable);
-
-                dataTable.Columns[0].ColumnName = "ID da Senha";
-                dataTable.Columns[1].ColumnName = "Nome da Senha";
-                dataTable.Columns[2].ColumnName = "Senha";
-                dataTable.Columns[3].ColumnName = "Link da Senha";
-
-                dataGridView.DataSource = dataTable;
-
-            }
-            catch (Exception E)
-            {
-                MessageBox.Show(E.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                c.desconectar();
-            }
-
-
-
-            if (dataGridView.Rows.Count < 1)
-            {
-                editarButton.Enabled = false;
-                novoButton.Enabled = true;
-                excluirButton.Enabled = false;
-            }
-            else
-            {
-                editarButton.Enabled = true;
-                excluirButton.Enabled = true;
-            }
+            
+            populateItems(this.dataTable);
 
         }
 
+
+
         private void button3_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[0].Value);
-            Conexao c = new Conexao();
-
             if (MessageBox.Show("Confirma a exclusão ?", "Confirmar exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                try
+                int id = -1;
+                for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
                 {
-                    c.conectar();
-                    string sql = "delete from Senhas where senhaID = " + id;
+                    if (senhaCard[i].Selected)
+                    {
+                        id = senhaCard[i].Id;
+                        Conexao c = new Conexao();
 
-                    SQLiteCommand command = new SQLiteCommand(sql, c.con);
-                    command.ExecuteNonQuery();
-               
+                        try
+                        {
+                            c.conectar();
+                            string sql = "delete from Senhas where senhaID = " + id;
+
+                            SQLiteCommand command = new SQLiteCommand(sql, c.con);
+                            command.ExecuteNonQuery();
+
+                        }
+                        catch (Exception E)
+                        {
+                            MessageBox.Show(E.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            c.desconectar();
+                        }
+                    }
                 }
-                catch (Exception E)
+                if(id == -1)
                 {
-                    MessageBox.Show(E.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nenhum item selecionado para a exclusão", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                finally
-                {
-                    c.desconectar();
-                }
+                populateItems(this.dataTable);
             }
-            conectarTabela();
+            
         }
 
         private void novoButton_Click(object sender, EventArgs e)
         {
             int idUser = idUsuario;
-            //Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[3].Value);
+            
             NovaSenhaForm f = new NovaSenhaForm(idUser);
             f.ShowDialog();
             f.Close();
-            conectarTabela();
+            populateItems(this.dataTable);
         }
 
 
         private void editarButton_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[0].Value);
-            string nome = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[1].Value);
-            string senha = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
-            string link = Convert.ToString(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[3].Value);
-            int idUser = idUsuario;
 
-            int escolha = 1;
-            NovaSenhaForm f = new NovaSenhaForm(id, idUser, nome, link, senha);
-            f.ShowDialog();
-            f.Close();
-            conectarTabela();
+            int id = -1;
+            int qnt = 0;
+            string nome;
+            string senha;
+            string link;
+
+            for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
+            {
+                if (senhaCard[i].Selected)
+                {
+                    qnt += 1;
+                }
+            }
+            if (qnt > 1)
+            {
+                MessageBox.Show("Selecione apenas um item para alterar", "Editar items", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                for (int i = 0; i < flowLayoutPanel1.Controls.Count; i++)
+                {
+                    if (senhaCard[i].Selected)
+                    {
+                        id = senhaCard[i].Id;
+                        nome = senhaCard[i].Nome;
+                        senha = senhaCard[i].Senha;
+                        link = senhaCard[i].Link;
+                        int idUser = idUsuario;
+
+                        int escolha = 1;
+                        NovaSenhaForm f = new NovaSenhaForm(id, idUser, nome, link, senha);
+                        f.ShowDialog();
+                        f.Close();
+                        populateItems(this.dataTable);
+                        break;
+                    }
+                }
+                if (id == -1)
+                {
+                    MessageBox.Show("Selecione algum item para alterar", "Editar items", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            } 
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -205,7 +219,7 @@ namespace Gerenciador_de_Senhas_2
                 }
                 ZipFile.ExtractToDirectory("./Backup.zip", "./");
                 MessageBox.Show("Backup restaurado com sucesso !", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                conectarTabela();
+                populateItems(this.dataTable);
             }
             else
             {
@@ -235,6 +249,80 @@ namespace Gerenciador_de_Senhas_2
         private void closeButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void HomeForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void populateItems(DataTable dataTable)
+        {
+
+            Conexao c = new Conexao();
+            try
+            {
+                c.conectar();
+
+                string sql = "SELECT senhaID, senhaNome, senhaSenha, senhaLink FROM Senhas " +
+                    "Where Senhas.senhaUsuario = (" +
+                    "select Contas.usuarioID from Contas where Contas.usuarioLogin = '" + this.usuario + "'" +
+                    ")";
+                SQLiteDataAdapter dados = new SQLiteDataAdapter(sql, c.con);
+                dataTable = new DataTable();
+                dados.Fill(dataTable);
+
+                dataTable.Columns[0].ColumnName = "ID da Senha";
+                dataTable.Columns[1].ColumnName = "Nome da Senha";
+                dataTable.Columns[2].ColumnName = "Senha";
+                dataTable.Columns[3].ColumnName = "Link da Senha";
+
+
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                c.desconectar();
+            }
+
+
+
+            if (dataTable.Rows.Count < 1)
+            {
+                editarButton.Enabled = false;
+                novoButton.Enabled = true;
+                excluirButton.Enabled = false;
+            }
+            else
+            {
+                editarButton.Enabled = true;
+                excluirButton.Enabled = true;
+            }
+
+            senhaCard = new SenhaCard[dataTable.Rows.Count];
+
+            flowLayoutPanel1.Controls.Clear();
+
+            for (int i = 0; i < senhaCard.Length; i++)
+            {
+                
+                   senhaCard[i] = new SenhaCard();
+                   senhaCard[i].Id = Convert.ToInt32(dataTable.Rows[i]["ID da Senha"]);
+                   senhaCard[i].Nome = dataTable.Rows[i]["Nome da Senha"].ToString();
+                   senhaCard[i].Senha = dataTable.Rows[i]["Senha"].ToString();
+                   senhaCard[i].Link = dataTable.Rows[i]["Link da Senha"].ToString();
+                   flowLayoutPanel1.Controls.Add(senhaCard[i]);
+                    
+                
+            }
         }
     }
 }

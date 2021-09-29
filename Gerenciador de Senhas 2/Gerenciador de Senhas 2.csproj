@@ -41,6 +41,7 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
@@ -93,6 +94,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SenhaCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SenhaCard.Designer.cs">
+      <DependentUpon>SenhaCard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CadastroForm.resx">
       <DependentUpon>CadastroForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +122,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SenhaCard.resx">
+      <DependentUpon>SenhaCard.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -195,6 +205,7 @@
   <ItemGroup>
     <Content Include="icone.ico" />
     <Content Include="IconeAplicativo.ico" />
+    <None Include="Resources\outline_done_black_24dp.png" />
     <None Include="Resources\twotone_pin_black_24dp.png" />
     <None Include="Resources\outline_minimize_black_24dp1.png" />
     <None Include="Resources\outline_close_black_24dp.png" />
