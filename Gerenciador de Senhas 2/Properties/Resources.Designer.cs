@@ -233,6 +233,26 @@ namespace Gerenciador_de_Senhas_2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_content_copy_black_18dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_content_copy_black_18dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_content_copy_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_content_copy_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_done_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("outline_done_black_24dp", resourceCulture);
@@ -283,9 +303,39 @@ namespace Gerenciador_de_Senhas_2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_password_black_48dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_password_black_48dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_restore_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("outline_restore_black_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_visibility_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_visibility_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_visibility_off_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_visibility_off_black_24dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

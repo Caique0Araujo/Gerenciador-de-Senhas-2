@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +14,18 @@ namespace Gerenciador_de_Senhas_2
 {
     public partial class SenhaCard : UserControl
     {
+        
+
         public SenhaCard()
         {
             InitializeComponent();
             labelSenha.Text = "*****";
-            _selected = false;
+            buttonSenha.Image = Properties.Resources.outline_visibility_off_black_24dp;
+            _selected = false;  
 
+            this.Refresh();
         }
+
 
         private string _nome;
 
@@ -73,11 +80,16 @@ namespace Gerenciador_de_Senhas_2
         {
             if(labelSenha.Text == "*****")
             {
-                labelSenha.Text = Senha;
-            }else
+                labelSenha.Text = Senha; 
+                buttonSenha.Image = Properties.Resources.outline_visibility_black_24dp;
+            }
+            else
             {
                 labelSenha.Text = "*****";
+                buttonSenha.Image = Properties.Resources.outline_visibility_off_black_24dp;
             }
+
+            
         }
 
         private void SenhaCard_Click(object sender, EventArgs e)
@@ -85,15 +97,19 @@ namespace Gerenciador_de_Senhas_2
             if (_selected)
             {
                 _selected = false;
-                BackColor = Color.White;
-                BorderStyle = BorderStyle.FixedSingle;
+                BackColor = Color.LightGray;
+                BorderStyle = BorderStyle.None;
             }
             else
             {
                 _selected = true;
-                BackColor = Color.LightGray;
+                BackColor = Color.Gray;
                 BorderStyle = BorderStyle.Fixed3D;
             }
         }
+
+        private void buttonCopiar_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(_senha);        }
     }
 }

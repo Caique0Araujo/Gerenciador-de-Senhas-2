@@ -6,11 +6,39 @@ using System.IO;
 using System.IO.Compression;
 using System.Runtime.InteropServices;
 using System.Windows.Documents;
+using System.Drawing;
+using System.Linq;
 
 namespace Gerenciador_de_Senhas_2
 {
     public partial class HomeForm : Form
     {
+
+        private void dropShadow(object sender, PaintEventArgs e)
+        {
+            FlowLayoutPanel panel = (FlowLayoutPanel)sender;
+            Color[] shadow = new Color[3];
+            shadow[0] = Color.FromArgb(181, 181, 181);
+            shadow[1] = Color.FromArgb(195, 195, 195);
+            shadow[2] = Color.FromArgb(211, 211, 211);
+            Pen pen = new Pen(shadow[0]);
+            using (pen)
+            {
+                foreach (SenhaCard p in panel.Controls.OfType<SenhaCard>())
+                {
+                    Point pt = p.Location;
+                    pt.Y += p.Height;
+                    for (var sp = 0; sp < 3; sp++)
+                    {
+                        pen.Color = shadow[sp];
+                        e.Graphics.DrawLine(pen, pt.X + sp, pt.Y, pt.X + p.Width - 1 + sp, pt.Y); 
+                        e.Graphics.DrawLine(pen, p.Right + sp, p.Top + sp, p.Right + sp, p.Bottom + sp);
+                        pt.Y++;
+                    }
+                }
+            }
+        }
+
 
         private const int CS_DropShadow = 0x00020000;
 
@@ -47,20 +75,14 @@ namespace Gerenciador_de_Senhas_2
             this.idUsuario = num;
             populateItems(this.dataTable);
 
+            flowLayoutPanel1.Paint += dropShadow; 
+
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void conectarTabela()
-        {
-            
-            populateItems(this.dataTable);
-
-        }
-
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -92,6 +114,7 @@ namespace Gerenciador_de_Senhas_2
                         {
                             c.desconectar();
                         }
+                        flowLayoutPanel1.Invalidate();
                     }
                 }
                 if(id == -1)
@@ -227,11 +250,6 @@ namespace Gerenciador_de_Senhas_2
             }
         }
 
-        private void post1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -251,19 +269,10 @@ namespace Gerenciador_de_Senhas_2
             Close();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void HomeForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void populateItems(DataTable dataTable)
         {
-
+            flowLayoutPanel1.Invalidate();
             Conexao c = new Conexao();
             try
             {
@@ -323,6 +332,8 @@ namespace Gerenciador_de_Senhas_2
                     
                 
             }
+            
+            flowLayoutPanel1.Paint += dropShadow;
         }
     }
 }
