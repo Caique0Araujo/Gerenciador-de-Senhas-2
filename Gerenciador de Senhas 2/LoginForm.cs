@@ -295,5 +295,10 @@ namespace Gerenciador_de_Senhas_2
         {
             Close();
         }
+
+        private void usuarioTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,9 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JTextBox">
+      <HintPath>dlls\JTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
@@ -205,6 +208,17 @@
   <ItemGroup>
     <Content Include="icone.ico" />
     <Content Include="IconeAplicativo.ico" />
+    <None Include="Resources\baseline_key_black_24dp1.png" />
+    <None Include="Resources\baseline_key_black_24dp.png" />
+    <None Include="Resources\baseline_lock_white_48dp.png" />
+    <None Include="Resources\baseline_account_circle_black_48dp.png" />
+    <None Include="Resources\outline_account_box_black_24dp1.png" />
+    <None Include="Resources\outline_account_box_black_24dp.png" />
+    <None Include="Resources\outline_manage_accounts_black_24dp.png" />
+    <None Include="Resources\outline_logout_black_24dp.png" />
+    <None Include="Resources\baseline_vpn_key_black_18dp.png" />
+    <None Include="Resources\baseline_lock_black_18dp.png" />
+    <None Include="Resources\baseline_pin_black_18dp.png" />
     <None Include="Resources\outline_content_copy_black_18dp.png" />
     <None Include="Resources\outline_content_copy_black_24dp.png" />
     <None Include="Resources\outline_visibility_black_24dp.png" />

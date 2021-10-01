@@ -65,12 +65,14 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.panel2.Controls.Add(this.pictureBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(87, 83);
             this.panel2.TabIndex = 1;
+            this.panel2.Click += new System.EventHandler(this.SenhaCard_Click);
             // 
             // pictureBox
             // 
@@ -135,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonCopiar);
             this.Controls.Add(this.buttonSenha);
             this.Controls.Add(this.labelSenha);

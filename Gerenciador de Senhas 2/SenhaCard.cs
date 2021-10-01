@@ -97,19 +97,22 @@ namespace Gerenciador_de_Senhas_2
             if (_selected)
             {
                 _selected = false;
-                BackColor = Color.LightGray;
+                BackColor = Color.WhiteSmoke;
                 BorderStyle = BorderStyle.None;
             }
             else
             {
                 _selected = true;
-                BackColor = Color.Gray;
+                BackColor = Color.LightGray;
                 BorderStyle = BorderStyle.Fixed3D;
             }
         }
 
         private void buttonCopiar_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(_senha);        }
+            Clipboard.SetText(_senha);
+            MessageBox.Show("Senha copiada para a área de transferência !", "Senha" , MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        
+        }
     }
 }

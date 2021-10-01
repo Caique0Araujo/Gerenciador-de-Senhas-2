@@ -36,14 +36,16 @@
             this.usuariotextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nometextBox = new System.Windows.Forms.TextBox();
-            this.cadastroBttn = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.removeButton = new System.Windows.Forms.Button();
+            this.cadastroBttn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -106,22 +108,6 @@
             this.nometextBox.TabIndex = 1;
             this.toolTip.SetToolTip(this.nometextBox, "Nome do usuário.");
             // 
-            // cadastroBttn
-            // 
-            this.cadastroBttn.BackColor = System.Drawing.Color.Transparent;
-            this.cadastroBttn.FlatAppearance.BorderSize = 0;
-            this.cadastroBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cadastroBttn.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cadastroBttn.ForeColor = System.Drawing.Color.Transparent;
-            this.cadastroBttn.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.baseline_check_circle_black_36dp;
-            this.cadastroBttn.Location = new System.Drawing.Point(100, 159);
-            this.cadastroBttn.Name = "cadastroBttn";
-            this.cadastroBttn.Size = new System.Drawing.Size(36, 36);
-            this.cadastroBttn.TabIndex = 4;
-            this.toolTip.SetToolTip(this.cadastroBttn, "Cadastrar um novo usuário.");
-            this.cadastroBttn.UseVisualStyleBackColor = false;
-            this.cadastroBttn.Click += new System.EventHandler(this.cadastroBttn_Click);
-            // 
             // removeButton
             // 
             this.removeButton.BackColor = System.Drawing.Color.Transparent;
@@ -130,7 +116,7 @@
             this.removeButton.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeButton.ForeColor = System.Drawing.Color.Transparent;
             this.removeButton.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.baseline_remove_circle_black_36dp;
-            this.removeButton.Location = new System.Drawing.Point(142, 159);
+            this.removeButton.Location = new System.Drawing.Point(152, 170);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(36, 36);
             this.removeButton.TabIndex = 14;
@@ -138,25 +124,51 @@
             this.removeButton.UseVisualStyleBackColor = false;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
+            // cadastroBttn
+            // 
+            this.cadastroBttn.BackColor = System.Drawing.Color.Transparent;
+            this.cadastroBttn.FlatAppearance.BorderSize = 0;
+            this.cadastroBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cadastroBttn.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cadastroBttn.ForeColor = System.Drawing.Color.Transparent;
+            this.cadastroBttn.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.baseline_check_circle_black_36dp;
+            this.cadastroBttn.Location = new System.Drawing.Point(194, 169);
+            this.cadastroBttn.Name = "cadastroBttn";
+            this.cadastroBttn.Size = new System.Drawing.Size(36, 36);
+            this.cadastroBttn.TabIndex = 4;
+            this.toolTip.SetToolTip(this.cadastroBttn, "Cadastrar um novo usuário.");
+            this.cadastroBttn.UseVisualStyleBackColor = false;
+            this.cadastroBttn.Click += new System.EventHandler(this.cadastroBttn_Click);
+            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.minimizeButton);
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Location = new System.Drawing.Point(-4, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 24);
+            this.panel1.Size = new System.Drawing.Size(238, 26);
             this.panel1.TabIndex = 15;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.baseline_lock_black_18dp;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Location = new System.Drawing.Point(23, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 2;
@@ -194,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(233, 207);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.removeButton);
@@ -215,6 +227,7 @@
             this.Load += new System.EventHandler(this.CadastroForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +248,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
