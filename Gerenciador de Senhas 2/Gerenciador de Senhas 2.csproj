@@ -33,16 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>IconeAplicativo.ico</ApplicationIcon>
+    <ApplicationIcon>IconeApp.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="JTextBox">
-      <HintPath>dlls\JTextBox.dll</HintPath>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System">
@@ -52,6 +53,7 @@
     <Reference Include="System.Data.SQLite">
       <HintPath>dlls\System.Data.SQLite.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -128,6 +130,7 @@
     <EmbeddedResource Include="SenhaCard.resx">
       <DependentUpon>SenhaCard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -208,6 +211,16 @@
   <ItemGroup>
     <Content Include="icone.ico" />
     <Content Include="IconeAplicativo.ico" />
+    <Content Include="IconeApp.ico" />
+    <None Include="Resources\outline_info_black_24dp.png" />
+    <None Include="Resources\outline_info_black_18dp.png" />
+    <None Include="Resources\outline_settings_backup_restore_white_36dp.png" />
+    <None Include="Resources\outline_backup_white_36dp.png" />
+    <None Include="Resources\outline_remove_circle_outline_white_36dp.png" />
+    <None Include="Resources\outline_edit_white_36dp.png" />
+    <None Include="Resources\outline_add_circle_outline_white_36dp.png" />
+    <None Include="Resources\outline_menu_white_24dp.png" />
+    <None Include="Resources\outline_menu_white_36dp.png" />
     <None Include="Resources\baseline_key_black_24dp1.png" />
     <None Include="Resources\baseline_key_black_24dp.png" />
     <None Include="Resources\baseline_lock_white_48dp.png" />

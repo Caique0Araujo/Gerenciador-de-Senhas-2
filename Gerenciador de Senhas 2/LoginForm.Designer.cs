@@ -1,4 +1,6 @@
-﻿namespace Gerenciador_de_Senhas_2
+﻿using System.Windows.Forms;
+
+namespace Gerenciador_de_Senhas_2
 {
     partial class LoginForm
     {
@@ -34,12 +36,12 @@
             this.senhaTextBox = new System.Windows.Forms.TextBox();
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.criarContaBttn = new System.Windows.Forms.Button();
             this.loginBttn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -63,8 +65,7 @@
             this.usuarioTextBox.Size = new System.Drawing.Size(138, 22);
             this.usuarioTextBox.TabIndex = 1;
             this.toolTip.SetToolTip(this.usuarioTextBox, "Campo para inserir usuário.");
-            this.usuarioTextBox.TextChanged += new System.EventHandler(this.usuarioTextBox_TextChanged);
-            // 
+// 
             // senhaTextBox
             // 
             this.senhaTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -84,11 +85,58 @@
             this.checkBox.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox.Location = new System.Drawing.Point(81, 213);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(120, 20);
+            this.checkBox.Size = new System.Drawing.Size(116, 20);
             this.checkBox.TabIndex = 3;
-            this.checkBox.Text = "Manter conectado";
+            this.checkBox.Text = "Salvar credenciais";
             this.toolTip.SetToolTip(this.checkBox, "Opção para manter a conta salva para próximos logins.");
             this.checkBox.UseVisualStyleBackColor = true;
+            // 
+            // criarContaBttn
+            // 
+            this.criarContaBttn.BackColor = System.Drawing.Color.DarkGray;
+            this.criarContaBttn.FlatAppearance.BorderSize = 0;
+            this.criarContaBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.criarContaBttn.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.criarContaBttn.ForeColor = System.Drawing.Color.Black;
+            this.criarContaBttn.Location = new System.Drawing.Point(170, 263);
+            this.criarContaBttn.Margin = new System.Windows.Forms.Padding(0);
+            this.criarContaBttn.Name = "criarContaBttn";
+            this.criarContaBttn.Size = new System.Drawing.Size(79, 24);
+            this.criarContaBttn.TabIndex = 5;
+            this.criarContaBttn.Text = "Criar conta";
+            this.toolTip.SetToolTip(this.criarContaBttn, "Criar nova conta.");
+            this.criarContaBttn.UseVisualStyleBackColor = false;
+            this.criarContaBttn.Click += new System.EventHandler(this.CriarConta);
+            // 
+            // loginBttn
+            // 
+            this.loginBttn.BackColor = System.Drawing.Color.DimGray;
+            this.loginBttn.FlatAppearance.BorderSize = 0;
+            this.loginBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginBttn.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginBttn.ForeColor = System.Drawing.Color.Transparent;
+            this.loginBttn.Location = new System.Drawing.Point(81, 262);
+            this.loginBttn.Name = "loginBttn";
+            this.loginBttn.Size = new System.Drawing.Size(73, 24);
+            this.loginBttn.TabIndex = 4;
+            this.loginBttn.Text = "Login";
+            this.toolTip.SetToolTip(this.loginBttn, "Efetuar login.");
+            this.loginBttn.UseVisualStyleBackColor = false;
+            this.loginBttn.Click += new System.EventHandler(this.FazerLogin);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("DejaVu Sans Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(118, 335);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 26);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Desenvolvido por \r\nCaique Araújo";
+            this.toolTip.SetToolTip(this.label3, "Clique aqui para acessar o Linkedin");
+            this.label3.Click += new System.EventHandler(this.AbrirLinkedin);
             // 
             // panel1
             // 
@@ -103,7 +151,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(219, 371);
             this.panel1.TabIndex = 7;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ArrastarJanela);
             // 
             // label1
             // 
@@ -132,50 +180,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Faça login para continuar.";
             // 
-            // criarContaBttn
-            // 
-            this.criarContaBttn.BackColor = System.Drawing.Color.DarkGray;
-            this.criarContaBttn.FlatAppearance.BorderSize = 0;
-            this.criarContaBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.criarContaBttn.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.criarContaBttn.ForeColor = System.Drawing.Color.Black;
-            this.criarContaBttn.Location = new System.Drawing.Point(170, 263);
-            this.criarContaBttn.Margin = new System.Windows.Forms.Padding(0);
-            this.criarContaBttn.Name = "criarContaBttn";
-            this.criarContaBttn.Size = new System.Drawing.Size(79, 24);
-            this.criarContaBttn.TabIndex = 5;
-            this.criarContaBttn.Text = "Criar conta";
-            this.toolTip.SetToolTip(this.criarContaBttn, "Criar nova conta.");
-            this.criarContaBttn.UseVisualStyleBackColor = false;
-            this.criarContaBttn.Click += new System.EventHandler(this.criarContaBttn_Click);
-            // 
-            // loginBttn
-            // 
-            this.loginBttn.BackColor = System.Drawing.Color.DimGray;
-            this.loginBttn.FlatAppearance.BorderSize = 0;
-            this.loginBttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBttn.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBttn.ForeColor = System.Drawing.Color.Transparent;
-            this.loginBttn.Location = new System.Drawing.Point(81, 262);
-            this.loginBttn.Name = "loginBttn";
-            this.loginBttn.Size = new System.Drawing.Size(73, 24);
-            this.loginBttn.TabIndex = 4;
-            this.loginBttn.Text = "Login";
-            this.toolTip.SetToolTip(this.loginBttn, "Efetuar login.");
-            this.loginBttn.UseVisualStyleBackColor = false;
-            this.loginBttn.Click += new System.EventHandler(this.loginBttn_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("DejaVu Sans Condensed", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(107, 336);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 26);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Desenvolvido por \r\nCaique Araújo";
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -194,7 +198,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 371);
             this.panel2.TabIndex = 10;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ArrastarJanela);
             // 
             // pictureBox1
             // 
@@ -231,12 +235,12 @@
             this.minimizeButton.ForeColor = System.Drawing.Color.Black;
             this.minimizeButton.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.outline_minimize_black_24dp;
             this.minimizeButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.minimizeButton.Location = new System.Drawing.Point(241, 2);
+            this.minimizeButton.Location = new System.Drawing.Point(245, 2);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.Size = new System.Drawing.Size(24, 24);
             this.minimizeButton.TabIndex = 1;
             this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizarJanela);
             // 
             // closeButton
             // 
@@ -244,12 +248,12 @@
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.outline_close_black_24dp;
-            this.closeButton.Location = new System.Drawing.Point(266, 2);
+            this.closeButton.Location = new System.Drawing.Point(275, 2);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(24, 24);
             this.closeButton.TabIndex = 0;
             this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Click += new System.EventHandler(this.FecharJanela);
             // 
             // LoginForm
             // 
@@ -265,7 +269,7 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FechandoJanela);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -283,9 +283,29 @@ namespace Gerenciador_de_Senhas_2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_add_circle_outline_white_36dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_add_circle_outline_white_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_backup_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("outline_backup_black_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_backup_white_36dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_backup_white_36dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,6 +383,36 @@ namespace Gerenciador_de_Senhas_2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_edit_white_36dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_edit_white_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_info_black_18dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_info_black_18dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_info_black_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_info_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_logout_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("outline_logout_black_24dp", resourceCulture);
@@ -386,6 +436,26 @@ namespace Gerenciador_de_Senhas_2.Properties {
         internal static System.Drawing.Bitmap outline_manage_accounts_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("outline_manage_accounts_black_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_menu_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_menu_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_menu_white_36dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_menu_white_36dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +493,29 @@ namespace Gerenciador_de_Senhas_2.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_remove_circle_outline_white_36dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_remove_circle_outline_white_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_restore_black_36dp {
             get {
                 object obj = ResourceManager.GetObject("outline_restore_black_36dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_settings_backup_restore_white_36dp {
+            get {
+                object obj = ResourceManager.GetObject("outline_settings_backup_restore_white_36dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

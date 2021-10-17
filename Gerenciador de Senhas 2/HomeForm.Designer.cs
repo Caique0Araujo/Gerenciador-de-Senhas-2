@@ -38,6 +38,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelUsuario = new System.Windows.Forms.Label();
+            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.infoButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -70,7 +72,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(598, 24);
             this.panel1.TabIndex = 8;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ArrastarJanela);
             // 
             // label3
             // 
@@ -100,14 +102,15 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(55, 65);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(57, 65);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(540, 390);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(536, 390);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.infoButton);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel2);
@@ -126,7 +129,7 @@
             this.panel4.Controls.Add(this.editarContaButton);
             this.panel4.Location = new System.Drawing.Point(3, 28);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(590, 32);
+            this.panel4.Size = new System.Drawing.Size(553, 32);
             this.panel4.TabIndex = 10;
             // 
             // labelUsuario
@@ -138,6 +141,36 @@
             this.labelUsuario.Size = new System.Drawing.Size(83, 16);
             this.labelUsuario.TabIndex = 8;
             this.labelUsuario.Text = "Bem vindo, ";
+            // 
+            // kryptonPalette1
+            // 
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Border.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Border.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kryptonPalette1.FormStyles.FormCommon.StateCommon.Border.Rounding = 15;
+            this.kryptonPalette1.FormStyles.FormCommon.StateInactive.Border.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette1.FormStyles.FormCommon.StateInactive.Border.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette1.FormStyles.FormCommon.StateInactive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.FormStyles.FormCommon.StateInactive.Border.Rounding = 15;
+            // 
+            // infoButton
+            // 
+            this.infoButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.infoButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.infoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.infoButton.ForeColor = System.Drawing.Color.Black;
+            this.infoButton.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.outline_info_black_24dp;
+            this.infoButton.Location = new System.Drawing.Point(560, 28);
+            this.infoButton.Name = "infoButton";
+            this.infoButton.Size = new System.Drawing.Size(32, 32);
+            this.infoButton.TabIndex = 4;
+            this.infoButton.UseVisualStyleBackColor = false;
+            this.infoButton.Click += new System.EventHandler(this.AbrirInfo);
             // 
             // pictureBox1
             // 
@@ -161,7 +194,7 @@
             this.minimizeButton.Size = new System.Drawing.Size(24, 24);
             this.minimizeButton.TabIndex = 1;
             this.minimizeButton.UseVisualStyleBackColor = false;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            this.minimizeButton.Click += new System.EventHandler(this.MinimizarJanela);
             // 
             // closeButton
             // 
@@ -174,7 +207,7 @@
             this.closeButton.Size = new System.Drawing.Size(24, 24);
             this.closeButton.TabIndex = 0;
             this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Click += new System.EventHandler(this.FecharJanela);
             // 
             // pictureBox2
             // 
@@ -193,13 +226,13 @@
             this.button1.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.outline_logout_black_24dp;
-            this.button1.Location = new System.Drawing.Point(563, 3);
+            this.button1.Location = new System.Drawing.Point(520, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(24, 24);
             this.button1.TabIndex = 5;
             this.ToolTip.SetToolTip(this.button1, "Sair da conta");
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.logoutButton_Click);
+            this.button1.Click += new System.EventHandler(this.SairConta);
             // 
             // editarContaButton
             // 
@@ -209,13 +242,13 @@
             this.editarContaButton.Font = new System.Drawing.Font("Gadugi", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editarContaButton.ForeColor = System.Drawing.Color.Transparent;
             this.editarContaButton.Image = global::Gerenciador_de_Senhas_2.Properties.Resources.outline_manage_accounts_black_24dp;
-            this.editarContaButton.Location = new System.Drawing.Point(536, 3);
+            this.editarContaButton.Location = new System.Drawing.Point(493, 3);
             this.editarContaButton.Name = "editarContaButton";
             this.editarContaButton.Size = new System.Drawing.Size(24, 24);
             this.editarContaButton.TabIndex = 6;
             this.ToolTip.SetToolTip(this.editarContaButton, "Editar conta");
             this.editarContaButton.UseVisualStyleBackColor = false;
-            this.editarContaButton.Click += new System.EventHandler(this.editarContaButton_Click);
+            this.editarContaButton.Click += new System.EventHandler(this.EditarConta);
             // 
             // restoreButton
             // 
@@ -230,7 +263,7 @@
             this.restoreButton.TabIndex = 7;
             this.ToolTip.SetToolTip(this.restoreButton, "Restaurar a partir do Backup");
             this.restoreButton.UseVisualStyleBackColor = false;
-            this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
+            this.restoreButton.Click += new System.EventHandler(this.RestaurarBackup);
             // 
             // exportarButton
             // 
@@ -245,7 +278,7 @@
             this.exportarButton.TabIndex = 4;
             this.ToolTip.SetToolTip(this.exportarButton, "Fazer backup");
             this.exportarButton.UseVisualStyleBackColor = false;
-            this.exportarButton.Click += new System.EventHandler(this.exportarButton_Click);
+            this.exportarButton.Click += new System.EventHandler(this.FazerBackup);
             // 
             // excluirButton
             // 
@@ -260,7 +293,7 @@
             this.excluirButton.TabIndex = 3;
             this.ToolTip.SetToolTip(this.excluirButton, "Excluí a senha selecionada");
             this.excluirButton.UseVisualStyleBackColor = false;
-            this.excluirButton.Click += new System.EventHandler(this.excluirButton_Click);
+            this.excluirButton.Click += new System.EventHandler(this.ExcluirSenha);
             // 
             // editarButton
             // 
@@ -275,7 +308,7 @@
             this.editarButton.TabIndex = 2;
             this.ToolTip.SetToolTip(this.editarButton, "Edita a senha selecionada");
             this.editarButton.UseVisualStyleBackColor = false;
-            this.editarButton.Click += new System.EventHandler(this.editarButton_Click);
+            this.editarButton.Click += new System.EventHandler(this.EditarSenha);
             // 
             // novoButton
             // 
@@ -291,7 +324,7 @@
             this.novoButton.TabIndex = 1;
             this.ToolTip.SetToolTip(this.novoButton, "Adiciona uma nova senha");
             this.novoButton.UseVisualStyleBackColor = false;
-            this.novoButton.Click += new System.EventHandler(this.novoButton_Click);
+            this.novoButton.Click += new System.EventHandler(this.NovaSenha);
             // 
             // HomeForm
             // 
@@ -337,5 +370,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label labelUsuario;
+        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
+        private System.Windows.Forms.Button infoButton;
     }
 }

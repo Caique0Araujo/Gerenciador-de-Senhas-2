@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.IO;
 
 namespace Gerenciador_de_Senhas_2
 {
     internal class Conexao
     {
+
         public SQLiteConnection con = new SQLiteConnection("Data Source=DBSenhas.db");
 
         public void conectar()
@@ -21,5 +23,6 @@ namespace Gerenciador_de_Senhas_2
 
         }
 
+        
     }
 }
