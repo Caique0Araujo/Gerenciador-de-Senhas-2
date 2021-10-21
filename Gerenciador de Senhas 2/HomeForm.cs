@@ -22,9 +22,6 @@ namespace Gerenciador_de_Senhas_2
         public const int HTCAPTION = 0x2;
 
 
-        
-
-
 
         private SenhaCard[] senhaCard;
 
@@ -48,10 +45,7 @@ namespace Gerenciador_de_Senhas_2
             CarregarConta();
             AtualizarComponentes(dataTable);
 
-
             flowLayoutPanel1.Paint += AdicionarSombra;
-            
-
 
         }
 
@@ -305,11 +299,12 @@ namespace Gerenciador_de_Senhas_2
             }
 
             ZipFile.CreateFromDirectory(backupFolder, backupZip);
-            if (dialog.ShowDialog() == DialogResult.OK)
-                MessageBox.Show("Backup criado com sucesso !", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             File.Delete(destfile);
             Directory.Delete(backupFolder);
+
+            if (File.Exists(backupZip))
+                MessageBox.Show("Backup criado com sucesso !", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);  
 
         }
         private void RestaurarBackup(object sender, EventArgs e)
@@ -320,7 +315,6 @@ namespace Gerenciador_de_Senhas_2
 
             var dialog = new OpenFileDialog();
 
-            dialog.ShowDialog();
             dialog.Title = "Escolher arquivo de backup";
 
             if (dialog.ShowDialog() == DialogResult.OK)

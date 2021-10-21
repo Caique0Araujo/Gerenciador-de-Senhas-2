@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SQLite;
-using System.IO;
+﻿using System.Data.SQLite;
+
 
 namespace Gerenciador_de_Senhas_2
 {
@@ -23,6 +18,6 @@ namespace Gerenciador_de_Senhas_2
 
         }
 
-        
+
     }
 }
